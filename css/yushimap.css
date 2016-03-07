@@ -1,0 +1,26 @@
+﻿html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+#map_canvas {
+  margin: 0;
+  padding: 0;
+  height: calc(100% - 50px);
+  width: 100%;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+}
+ul li a {
+  margin:5px 7px 0px;
+  padding:0px !important;
+}
+ul li a img {
+  width: 40px;
+}
+#testPullDown {
+  margin: 0 auto;
+}
