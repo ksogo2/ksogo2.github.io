@@ -1,4 +1,4 @@
-﻿// google.maps.Mapオブジェクト（地図オブジェクト）
+// google.maps.Mapオブジェクト（地図オブジェクト）
 var mapCanvas = null;
 
 // 情報ウィンドウオブジェクト
@@ -17,6 +17,7 @@ var megurin = {
 var ew_markerbus = new Array();
 var n_markerbus  = new Array();
 var s_markerbus  = new Array();
+var g_markerbus  = new Array();
 
 //ポリライン
 var polylines    = new Array();
@@ -236,6 +237,61 @@ var path_n = [
   new google.maps.LatLng(35.711704, 139.798493)
 ];
 
+var path_g = [
+  new google.maps.LatLng(35.714394, 139.778400),
+  new google.maps.LatLng(35.715069, 139.778893),
+  new google.maps.LatLng(35.717282, 139.780717),
+  new google.maps.LatLng(35.719072, 139.780497),
+  new google.maps.LatLng(35.720627, 139.781227),
+  new google.maps.LatLng(35.722047, 139.782530),
+  new google.maps.LatLng(35.723645, 139.784156),
+  new google.maps.LatLng(35.725213, 139.786183),
+  new google.maps.LatLng(35.724708, 139.787567),
+  new google.maps.LatLng(35.724747, 139.789407),
+  new google.maps.LatLng(35.724769, 139.790883),
+  new google.maps.LatLng(35.728923, 139.790593),
+  new google.maps.LatLng(35.730208, 139.791698),
+  new google.maps.LatLng(35.728792, 139.793774),
+  new google.maps.LatLng(35.724594, 139.797384),
+  new google.maps.LatLng(35.724934, 139.798302),
+  new google.maps.LatLng(35.726201, 139.800802),
+  new google.maps.LatLng(35.726332, 139.804932),
+  new google.maps.LatLng(35.727469, 139.805050),
+  new google.maps.LatLng(35.728597, 139.805351),
+  new google.maps.LatLng(35.728235, 139.808457),
+  new google.maps.LatLng(35.727660, 139.808542),
+  new google.maps.LatLng(35.725775, 139.807995),
+  new google.maps.LatLng(35.724172, 139.807614),
+  new google.maps.LatLng(35.722534, 139.807260),
+  new google.maps.LatLng(35.721071, 139.806853),
+  new google.maps.LatLng(35.720618, 139.806563),
+  new google.maps.LatLng(35.719399, 139.805286),
+  new google.maps.LatLng(35.715017, 139.801842),
+  new google.maps.LatLng(35.713737, 139.800565),
+  new google.maps.LatLng(35.710735, 139.797765),
+  new google.maps.LatLng(35.711380, 139.792004),
+  new google.maps.LatLng(35.709664, 139.791425),
+  new google.maps.LatLng(35.706083, 139.790749),
+  new google.maps.LatLng(35.706397, 139.788034),
+  new google.maps.LatLng(35.701779, 139.788058),
+  new google.maps.LatLng(35.701666, 139.785988),
+  new google.maps.LatLng(35.701910, 139.784014),
+  new google.maps.LatLng(35.700812, 139.783735),
+  new google.maps.LatLng(35.698947, 139.782973),
+  new google.maps.LatLng(35.699148, 139.780376),
+  new google.maps.LatLng(35.700158, 139.780537),
+  new google.maps.LatLng(35.700472, 139.776954),
+  new google.maps.LatLng(35.702554, 139.777158),
+  new google.maps.LatLng(35.702223, 139.780956),
+  new google.maps.LatLng(35.705272, 139.781629),
+  new google.maps.LatLng(35.708556, 139.782123),
+  new google.maps.LatLng(35.708748, 139.780149),
+  new google.maps.LatLng(35.713069, 139.780878),
+  new google.maps.LatLng(35.713696, 139.779183),
+  new google.maps.LatLng(35.714219, 139.778346),
+  new google.maps.LatLng(35.714394, 139.778400)
+];
+
 // ページロード時にinitialize関数を呼び出す
 google.maps.event.addDomListener(window, "load", initialize);
 
@@ -262,6 +318,7 @@ function initialize() {
   initializeMarkerObj("data/LatLngItem.json", "ew_bus_station", ew_markerbus, "img/ew_bus.png");
   initializeMarkerObj("data/LatLngItem.json", "n_bus_station",  n_markerbus,  "img/n_bus.png");
   initializeMarkerObj("data/LatLngItem.json", "s_bus_station",  s_markerbus,  "img/s_bus.png");
+  initializeMarkerObj("data/LatLngItem.json", "g_bus_station",  g_markerbus,  "img/g_bus.png");
 
   // ポリゴンを表示する
   polylines[0] = new google.maps.Polyline({
@@ -312,6 +369,23 @@ function initialize() {
     map: mapCanvas,
     path: path_n,
     strokeColor: "red", // 線の色
+    strokeOpacity: 0.8, // 線の透明度
+    visible: false
+  });
+  polylines[3] = new google.maps.Polyline({
+    icons: [{
+      icon: {
+        path: google.maps.SymbolPath.FORWARD_OPEN_ARROW,
+        scale: 2,
+        strokeColor: "black",
+        strokeOpacity: 0.8,
+      },
+      repeat: "1%",
+      offset: "100px"
+    }],
+    map: mapCanvas,
+    path: path_g,
+    strokeColor: "black", // 線の色
     strokeOpacity: 0.8, // 線の透明度
     visible: false
   });
@@ -368,6 +442,12 @@ $(function() {
       n_markerbus[i].setVisible(!n_markerbus[i].visible);
     }
     polylines[2].setVisible(!polylines[2].visible);
+  });
+  $('#btn_3').on('click', function() {
+    for (var i = 0; i < g_markerbus.length; i++) {
+      g_markerbus[i].setVisible(!g_markerbus[i].visible);
+    }
+    polylines[3].setVisible(!polylines[3].visible);
   });
   $("#btn_4").click(function() {
     initialize();
