@@ -1,24 +1,50 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>ゆしまっぷ</title>
+    <title>めぐりんバス</title>
     <meta charset="utf-8" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/yushimap.css" rel="stylesheet">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script type="text/javascript" src="js/getUrl.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
+    <script type="text/javascript" src="js/yushimap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
-  <body background>
-    <div class="container">
-      <div class="row">
-        <li>バス路線名</li>
-        <select id="testPullDown" class="form-control" onChange="">
-          <option value="">選択してください</option>
-          <option value="ew_megurin">台東区循環バス「めぐりん」</option>
-          <option value="n_megurin">北めぐりん</option>
-          <option value="s_megurin">南めぐりん</option>
-        </select>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <ul class="nav nav-pills flex">
+        <li role="presentation" id="btn_0"><a><img src="img/ew.png" class="image-responsive" alt="" /></a></li>
+        <li role="presentation" id="btn_1"><a><img src="img/s.png"  class="image-responsive" alt="" /></a></li>
+        <li role="presentation" id="btn_2"><a><img src="img/n.png"  class="image-responsive" alt="" /></a></li>
+        <li role="presentation" id="btn_#"><a><img src="img/g.png"  class="image-responsive" alt="" /></a></li>
+        <li role="presentation"><a href="info.html">オススメ</a></li>
+      </ul>
+    </nav>
+    <!-- Button trigger modal -->
+    <!-- button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      Launch demo modal
+    </button -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">上野公園</h4>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <tr id="photo"></tr>
+              <tr>
+                <th>出演者</th>
+                <td id="actor"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
+    
+    <div id="map_canvas"></div>
   </body>
 </html>
