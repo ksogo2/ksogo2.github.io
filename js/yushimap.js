@@ -308,8 +308,8 @@ function initialize() {
   // GoogleMapの中心座標, 表示の大きさを設定する
   var mapDiv = document.getElementById("map_canvas");
   var myOptions = {
-    center    : new google.maps.LatLng(35.715010, 139.782049),
-    zoom      : 15,
+    center    : new google.maps.LatLng(35.712645, 139.779956),
+    zoom      : 18,
     mapTypeId : google.maps.MapTypeId.ROADMAP
   };
   mapCanvas = new google.maps.Map(mapDiv, myOptions);
