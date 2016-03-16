@@ -297,14 +297,6 @@ google.maps.event.addDomListener(window, "load", initialize);
 
 // 地図を初期化する
 function initialize() {
-
-  // 始発駅のめぐりん情報を取得する
-  $.getJSON("data/starting_station.json", function(json) {
-    $(json["megurin"]).each(function() {
-        megurin.name      = this.name;
-    });
-  });
-
   // GoogleMapの中心座標, 表示の大きさを設定する
   var mapDiv = document.getElementById("map_canvas");
   var myOptions = {
@@ -396,7 +388,7 @@ function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
   $.getJSON(jsonFilePath, function(json) {
 
     // 取得した情報を登録する
-    $(json[megurin.name][itemKey]).each(function() {
+    $(json[itemKey]).each(function() {
       // マーカーオブジェクトに位置情報を追加
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(Number(this.latitude), Number(this.longitude)),
