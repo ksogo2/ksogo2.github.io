@@ -1,7 +1,0 @@
-{
-    "megurin": [
-        { "latitude":"35.711426",  "longitude":"139.798153",  "zoom":"15",  "name":"n_megurin",  "icon":"img/n_bus_start.png"  },
-        { "latitude":"35.711910",  "longitude":"139.778556",  "zoom":"15",  "name":"s_megurin",  "icon":"img/s_bus_start.png"  },
-        { "latitude":"35.712471",  "longitude":"139.779651",  "zoom":"15",  "name":"ew_megurin", "icon":"img/ew_bus_start.png" }
-    ]
-}
