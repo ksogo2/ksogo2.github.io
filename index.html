@@ -21,6 +21,26 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KN3NPZ');</script>
     <!-- End Google Tag Manager -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            ...
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal -->
+    
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <ul class="nav nav-pills flex">
         <li role="presentation" id="btn_0"><a><img src="img/ew.png" class="image-responsive" alt="" /></a></li>
@@ -30,31 +50,6 @@
         <li role="presentation" id="btn_4"><a><img src="img/re.png" class="image-responsive" alt="" /></a></li>
       </ul>
     </nav>
-    <!-- Button trigger modal -->
-    <!-- button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-      Launch demo modal
-    </button -->
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">上野公園</h4>
-          </div>
-          <div class="modal-body">
-            <table class="table">
-              <tr id="photo"></tr>
-              <tr>
-                <th>出演者</th>
-                <td id="actor"></td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    
     <div id="map_canvas"></div>
   </body>
 </html>

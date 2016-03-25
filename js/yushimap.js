@@ -386,8 +386,6 @@ function initialize() {
 // JSONファイルからマーカーオブジェクトに情報を読み込む
 function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
   $.getJSON(jsonFilePath, function(json) {
-
-    // 取得した情報を登録する
     $(json[itemKey]).each(function() {
       // マーカーオブジェクトに位置情報を追加
       var marker = new google.maps.Marker({
@@ -400,7 +398,7 @@ function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
 
       // 情報ウィンドウオブジェクトに説明を登録
       var infoWindow = new google.maps.InfoWindow({
-        content: '<li><a href="#myModal">' + this.name + "</a></li>"
+        content: '<a data-toggle="modal" data-target="#myModal">' + this.name + "</a>"
       });
 
       // マーカークリックイベントを登録
