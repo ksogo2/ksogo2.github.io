@@ -1,9 +1,9 @@
 $(function() {
-    // select•ÏX
+    // selectå¤‰æ›´æ™‚
     $('#busPullDown').on('change', function() {
-        // ‘JˆÚæURLæ“¾
+        // é·ç§»å…ˆURLå–å¾—
         var url = $(this).val();
-        // URL‚ªæ“¾‚Å‚«‚Ä‚¢‚ê‚Îƒy[ƒW‘JˆÚ
+        // URLãŒå–å¾—ã§ãã¦ã„ã‚Œã°ãƒšãƒ¼ã‚¸é·ç§»
         if(url != '') {
             location.href = url;
         }

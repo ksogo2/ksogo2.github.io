@@ -8,6 +8,7 @@
     <link href="css/yushimap.css" rel="stylesheet">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/yushimapK.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
@@ -21,7 +22,7 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KN3NPZ');</script>
     <!-- End Google Tag Manager -->
-    
+
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -40,7 +41,17 @@
       </div>
     </div>
     <!-- End Modal -->
-    
+
+    <div class="container">
+      <div class="row">
+        <select id="busPullDown" class="form-control" onChange="">
+          <option value="">コミュニティバスを選んでください</option>
+          <option value="index.html">台東区：めぐりん</option>
+          <option value="mapK.html" selected>千代田区：風くるま</option>
+          <option value="#">文京区：B-ぐる</option>
+        </select>
+      </div>
+    </div>
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <ul class="nav nav-pills flex">
         <li role="presentation" id="btn_0"><a><img src="img/k.png"  class="image-responsive" alt="" /></a></li>
@@ -48,7 +59,6 @@
         <li role="presentation" id="btn_2"><a><img src="img/u.png"  class="image-responsive" alt="" /></a></li>
         <li role="presentation" id="btn_3"><a><img src="img/a.png"  class="image-responsive" alt="" /></a></li>
         <!-- li role="presentation" id="btn_4"><a><img src="img/re.png" class="image-responsive" alt="" /></a></li -->
-        <li role="presentation" id="#"><a href="index.html"><img src="img/back.png" class="image-responsive" alt="" /></a></li>
       </ul>
     </nav>
     <div id="map_canvas"></div>

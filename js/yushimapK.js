@@ -400,7 +400,7 @@ function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
 
       // 情報ウィンドウオブジェクトに説明を登録
       var infoWindow = new google.maps.InfoWindow({
-        content: '<li><a href="#myModal">' + this.name + "</a></li>"
+        content: '<a data-toggle="modal" data-target="#myModal">' + this.name + "</a>"
       });
 
       // マーカークリックイベントを登録

@@ -1,4 +1,4 @@
-﻿html, body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -7,7 +7,7 @@
 #map_canvas {
   margin: 0;
   padding: 0;
-  height: calc(100% - 50px);
+  height: calc(100% - 88px);
   width: 100%;
 }
 .flex {

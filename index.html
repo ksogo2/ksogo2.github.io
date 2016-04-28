@@ -9,19 +9,58 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/yushimapM.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
-  <body background>
+  <body>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KN3NPZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KN3NPZ');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            ...
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal -->
+
     <div class="container">
       <div class="row">
-        <h5>コミュニティバス</h5>
         <select id="busPullDown" class="form-control" onChange="">
-          <option value="">選択してください</option>
-          <option value="mapM.html">台東区：めぐりん</option>
+          <option value="">コミュニティバスを選んでください</option>
+          <option value="index.html" selected>台東区：めぐりん</option>
           <option value="mapK.html">千代田区：風くるま</option>
           <option value="#">文京区：B-ぐる</option>
         </select>
       </div>
     </div>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <ul class="nav nav-pills flex">
+        <li role="presentation" id="btn_0"><a><img src="img/ew.png" class="image-responsive" alt="" /></a></li>
+        <li role="presentation" id="btn_1"><a><img src="img/s.png"  class="image-responsive" alt="" /></a></li>
+        <li role="presentation" id="btn_2"><a><img src="img/n.png"  class="image-responsive" alt="" /></a></li>
+        <li role="presentation" id="btn_3"><a><img src="img/g.png"  class="image-responsive" alt="" /></a></li>
+        <!-- li role="presentation" id="btn_4"><a><img src="img/re.png" class="image-responsive" alt="" /></a></li -->
+      </ul>
+    </nav>
+    <div id="map_canvas"></div>
   </body>
 </html>
