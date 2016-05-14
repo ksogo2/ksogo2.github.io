@@ -252,6 +252,7 @@ var path_a = [
   new google.maps.LatLng(35.695962, 139.760547),
   new google.maps.LatLng(35.695840, 139.755349),
   new google.maps.LatLng(35.695653, 139.753042),
+  new google.maps.LatLng(35.695409, 139.751503),
   new google.maps.LatLng(35.694551, 139.751807),
   new google.maps.LatLng(35.693863, 139.752923),
   new google.maps.LatLng(35.694159, 139.753170)
