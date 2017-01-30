@@ -410,6 +410,17 @@ function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
         }
         infoWindow.open(mapCanvas, marker);
         currentInfoWindow = infoWindow;
+
+        // モーダル情報追加
+        var divHeader = $('<div>');
+        divHeader.append('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
+        divHeader.append('<h4 class="modal-title" id="myModalLabel">' + busStationName + '</h4>');
+        $('.modal-header').html(divHeader);
+
+        var divBody = $('<div>');
+        divBody.append('<h5>' + "【始発】" + startTime + '</h5>');
+        divBody.append('<h5>' + "【最終】" + endTime + '</h5>');
+        $('.modal-body').html(divBody);
       });
     });
   });
