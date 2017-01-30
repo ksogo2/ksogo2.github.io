@@ -398,9 +398,13 @@ function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
       });
       markerObject.push(marker);
 
+      var busStationName = this.name;
+      var startTime = this.start;
+      var endTime = this.end;
+
       // 情報ウィンドウオブジェクトに説明を登録
       var infoWindow = new google.maps.InfoWindow({
-        content: '<a data-toggle="modal" data-target="#myModal">' + this.name + "</a>"
+        content: '<a data-toggle="modal" data-target="#myModal">' + busStationName + "</a>"
       });
 
       // マーカークリックイベントを登録
