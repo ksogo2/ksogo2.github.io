@@ -364,9 +364,16 @@ function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
       });
       markerObject.push(marker);
 
+      var busStationName = this.name;
+      var startTime = this.start;
+      var KstartTime = this.Kstart;
+      var endTime = this.end;
+      var KendTime = this.Kend;
+      var memo = this.memo;
+
       // 情報ウィンドウオブジェクトに説明を登録
       var infoWindow = new google.maps.InfoWindow({
-        content: '<a data-toggle="modal" data-target="#myModal">' + this.name + "</a>"
+        content: '<a data-toggle="modal" data-target="#myModal">' + busStationName + "</a>"
       });
 
       // マーカークリックイベントを登録
@@ -376,6 +383,18 @@ function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
         }
         infoWindow.open(mapCanvas, marker);
         currentInfoWindow = infoWindow;
+
+        // モーダル情報追加
+        var divHeader = $('<div>');
+        divHeader.append('<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
+        divHeader.append('<h4 class="modal-title" id="myModalLabel">' + busStationName + '</h4>');
+        $('.modal-header').html(divHeader);
+
+        var divBody = $('<div>');
+        divBody.append('<h5>' + "平日：【始発】" + startTime + "【最終】" + endTime + '</h5>');
+        divBody.append('<h5>' + "休日：【始発】" + KstartTime + "【最終】" + KendTime + '</h5>');
+        divBody.append('<h5>' + memo + '</h5>');
+        $('.modal-body').html(divBody);
       });
     });
   });
