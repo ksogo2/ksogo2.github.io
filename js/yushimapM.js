@@ -402,7 +402,6 @@ function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
       var startTime = this.start;
       var KstartTime = this.Kstart;
       var endTime = this.end;
-      var KendTime = this.Kend;
       var memo = this.memo;
 
       // 情報ウィンドウオブジェクトに説明を登録
@@ -426,7 +425,7 @@ function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
 
         var divBody = $('<div>');
         divBody.append('<h5>' + "平日：【始発】" + startTime + "【最終】" + endTime + '</h5>');
-        divBody.append('<h5>' + "休日：【始発】" + KstartTime + "【最終】" + KendTime + '</h5>');
+        divBody.append('<h5>' + "休日：【始発】" + KstartTime + "【最終】" + endTime + '</h5>');
         divBody.append('<h5>' + memo + '</h5>');
         $('.modal-body').html(divBody);
       });
