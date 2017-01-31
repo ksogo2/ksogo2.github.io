@@ -423,6 +423,7 @@ function initializeMarkerObj(jsonFilePath, itemKey, markerObject, iconImg) {
 
         var divBody = $('<div>');
         divBody.append('<h5>' + "平日：【始発】" + startTime + "【最終】" + endTime + '</h5>');
+        divBody.append('<h5>' + "休日：【始発】" + "" + "【最終】" + "" + '</h5>');
         $('.modal-body').html(divBody);
       });
     });
